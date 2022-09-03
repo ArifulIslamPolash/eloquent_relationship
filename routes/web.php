@@ -5,6 +5,7 @@ use App\Models\Phone;
 use App\Models\User;
 use App\Models\Post;
 use App\Models\Comment;
+use App\Models\Category;
 use Illuminate\Support\Facades\DB;
 
 /*
@@ -64,4 +65,17 @@ Route::get('/relation', function () {
     // return $posts;
 
     return view('commentpost', compact('comments'));
+});
+Route::get('/manytomany', function () {
+
+    $posts=Post::with('categories')->get();
+    // $posts=Post::all();
+    // return $posts;
+
+    $categories=Category::with('posts')->get();
+    // $categories=Category::all();
+    // return $categories;
+
+
+    return view('manytomany',compact('posts'));
 });
