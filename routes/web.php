@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\Mechanic;
 use App\Models\Car;
 use App\Models\Owner;
+use App\Models\Country;
 use Illuminate\Support\Facades\DB;
 
 /*
@@ -93,4 +94,15 @@ Route::get('/hasonethrow', function () {
 
 
     return view('hasonethrow', compact('mechanics'));
+});
+Route::get('/hasmanythrow', function () {
+
+    // $countries =Country::all();
+    $countries =Country::with('posts')->get();
+    // return $countries;
+
+
+
+
+    return view('hasmanythrow', compact('countries'));
 });
