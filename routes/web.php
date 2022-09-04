@@ -77,5 +77,5 @@ Route::get('/manytomany', function () {
     // return $categories;
 
 
-    return view('manytomany',compact('posts'));
+    return view('manytomany', compact('posts'));
 });

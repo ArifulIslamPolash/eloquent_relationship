@@ -25,7 +25,11 @@
                         <tr>
 
                             <td>{{ $data->title }}</td>
-                            <td>{{ $data->categories->name }}</td>
+                            
+                            @foreach ($data->categories as $cat )
+                            <td>{{ $cat->name }}</td>
+                            @endforeach
+                            {{-- <td>{{ $data->categories->name }}</td> --}}
 
                         </tr>
 
