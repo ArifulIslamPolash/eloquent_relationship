@@ -1,0 +1,16 @@
+Eloquent Relationships:
+=============================
+One To One
+One To Many
+One To Many (Inverse) / Belongs To
+Has One Of Many
+Has One Through
+Has Many Through
+
+Polymorphic Relationships:
+=============================
+One To One
+One To Many
+One Of Many
+Many To Many
+Custom Polymorphic Types
