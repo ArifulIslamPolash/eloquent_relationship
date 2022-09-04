@@ -6,6 +6,9 @@ use App\Models\User;
 use App\Models\Post;
 use App\Models\Comment;
 use App\Models\Category;
+use App\Models\Mechanic;
+use App\Models\Car;
+use App\Models\Owner;
 use Illuminate\Support\Facades\DB;
 
 /*
@@ -35,12 +38,12 @@ Route::get('/', function () {
     // return $phones;
 
     $comments = Post::find(3)->comment;
-    return $comments;
+    // return $comments;
     // dd($comments);
     // $posts = Post::all();
     // return $posts;
 
-    // return view('welcome', compact('phones'));
+    return view('welcome', compact('phones'));
 });
 Route::get('/relation', function () {
 
@@ -78,4 +81,16 @@ Route::get('/manytomany', function () {
 
 
     return view('manytomany', compact('posts'));
+});
+Route::get('/hasonethrow', function () {
+
+    // $mechanics=Mechanic::all();
+    $mechanics=Mechanic::with('carOwner')->get();
+    // $posts=Post::all();
+    // return $mechanics;
+
+
+
+
+    return view('hasonethrow', compact('mechanics'));
 });
